@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Typing Game</title>
+<style>
+body{
+    text-align:center;
+    font-family:Arial;
+    background:#111;
+    color:white;
+}
+
+input{
+    padding:10px;
+    width:250px;
+    margin-top:20px;
+}
+
+button{
+    padding:10px 20px;
+    margin-top:10px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>⌨️ Typing Game</h1>
+
+<h2 id="text">hello world</h2>
+
+<input id="input" placeholder="type here">
+<br>
+<button onclick="check()">Check</button>
+
+<h2 id="result"></h2>
+
+<script>
+let texts = ["hello world", "mini games hub", "javascript is fun"];
+let current = texts[Math.floor(Math.random()*texts.length)];
+
+document.getElementById("text").innerText = current;
+
+function check(){
+    let val = document.getElementById("input").value;
+
+    if(val === current){
+        document.getElementById("result").innerText = "Correct 🎉";
+    } else {
+        document.getElementById("result").innerText = "Wrong ❌";
+    }
+}
+</script>
+
+</body>
+</html>
